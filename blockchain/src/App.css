@@ -1,0 +1,219 @@
+/* App.css */
+:root {
+  --charcoal: #121212;
+  --charcoal-light: #1e1e1e;
+  --charcoal-lighter: #2a2a2a;
+  --charcoal-lightest: #3b3b3b;
+  --white: #ffffff;
+  --white-dim: #e6e6e6;
+  --text-primary: #f0f0f0;
+  --text-secondary: #9a9a9a;
+  --accent: #6e48aa;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--charcoal);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  max-width: 720px; /* Increased from 600px */
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #ffffff, #cccccc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: var(--charcoal-light);
+  border-radius: 12px;
+  padding: 1.8rem; /* Increased padding */
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%; /* Ensure full width */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.9rem 1.2rem; /* Slightly reduced padding */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background-color: var(--charcoal-lighter);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+input[type="text"]:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--charcoal-lightest);
+}
+
+.btn {
+  background-color: var(--white);
+  color: var(--charcoal);
+  border: none;
+  padding: 0.9rem 1.5rem; /* Adjusted padding */
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%; /* Full width buttons */
+  box-sizing: border-box;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: var(--white-dim);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.connected-account {
+  background-color: rgba(110, 72, 170, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border: 1px solid rgba(110, 72, 170, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.connected-account strong {
+  color: var(--text-primary);
+}
+
+.cert-details {
+  background-color: var(--charcoal-light);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cert-details h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cert-details p {
+  margin: 0.7rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cert-details p strong {
+  color: var(--white-dim);
+  font-weight: 500;
+}
+
+.ipfs-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.ipfs-link:hover {
+  color: #8a63cc;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--white);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}
